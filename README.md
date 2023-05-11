@@ -7,6 +7,8 @@ do ... bla bla bla more>
 ## Group A
 
 1. Bao Nam Nguyen
+2. Olawale Abosede Kikelomo
+
 
 ## Features
 
