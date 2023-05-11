@@ -1,2 +1,7 @@
-# INFO-6134-Capstone-Project-Group-A
-Source code for our Android Capstone Project to help users improve &lt;type something later>
+# INFO-6134-Capstone-Project
+Group A
+
+1. Sagar Gurung
+2. Prayush Ratna Sthapit
+3. Bao Nam Nguyen
+4. Abosede Kikelomo Olawale
