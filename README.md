@@ -1,4 +1,4 @@
-# Fanshawe Public Library
+# Fanshawe Library
 
 Welcome to Fanshawe Library, the ultimate app for managing your library borrowing needs! With our app, you can easily search for books, reserve them, and keep track of your borrowed items all in one convenient place. Our user-friendly interface makes it easy to navigate the library's vast collection of books and find the ones that interest you the most. Whether you're a student, faculty member, or simply an avid reader, Fanshawe Library has everything you need to make the most out of your library experience. So why wait? Download the app today and start exploring the world of literature like never before!
 
