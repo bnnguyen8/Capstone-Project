@@ -1,6 +1,6 @@
-# Fanshawe Library
+# Fanshawe Notes
 
-Welcome to Fanshawe Library, the ultimate app for managing your library borrowing needs! With our app, you can easily search for books, reserve them, and keep track of your borrowed items all in one convenient place. Our user-friendly interface makes it easy to navigate the library's vast collection of books and find the ones that interest you the most. Whether you're a student, faculty member, or simply an avid reader, Fanshawe Library has everything you need to make the most out of your library experience. So why wait? Download the app today and start exploring the world of literature like never before!
+Welcome to Fanshawe Notes, this is the ultimate app with features like creating and editing notes, searching by title or text, sorting by date, customizable backgrounds, folders, reminders, voice memos, tags, and sharing via email and social media. Our app empowers you to stay organized, collaborate efficiently, and never miss a deadline. Whether you're a student, professional, or simply someone who loves to stay organized, this app is the go-to app for seamless note-taking and effective information management.
 
 ## Group A
 
@@ -9,24 +9,23 @@ Welcome to Fanshawe Library, the ultimate app for managing your library borrowin
 3. Prayush Ratna Sthapit
 4. Sagar Gurung
 
-
 ## Features
 
 Users are provided with an account and password when they register at the library counter, then they download the app to use:
 
-1. Users can login with a given account, with initial id and password, and and after login user will see a list of Books where they have borrowed such as checked out date, due date
-2. Users can switch dark mode and light mode in the profile's app preferences
-3. Users can update their profile information, including name, email, phone number, and address
-4. Users can change their password, and will be required to enter old password, if old password is not matched from database or reentered new password does not match the new password, password changing will not success.
-5. In list screen of borrowed books, users can search for books by name, author, or category for the books they borrowed
-6. Users can view the details of a book: name, author, category, and description when clicking on the title of the books
-7. In the detail screen of a book, users can rate a book using 1-5 stars rating bar.
-8. In the detail screen of a book, Users can leave a comment on a book
-9. Users can renew a book in the list of books they have borrowed
-10. Users can view the library's opening hours, contact information in menu bar
-11. Users can view all the books currently in the library with its name, author and category
-12. Users can search all the books currently in the library by name, author, or category
-13. In the book detail screen, users can place hold on a book, it will be saved for them when it becomes available
-14. Users can view the history of books they have borrowed, including the books they have returned
-15. Users can view the history of books they have placed hold on
-16. Users can view the history of books they have rated
+1. Create Notes: Users can create new notes with a title and body text.
+2. Edit Notes: Users can edit the contents of existing notes.
+3. Delete Notes: Users can delete an existing note.
+4. Users can search by title or body text to find specific notes.
+5. Users can sort notes by date created or last modified.
+6. Users can change note's background color to different colors: yellow, green, blue, purple, pink, gray.
+7. Users can organize their notes into folders or categories for better management.
+8. Users can set reminders for specific notes to receive notifications or alarms at designated times.
+9. Users can record voice memos or add audio recordings to their notes.
+10. Users can mark a Note as completed
+11. Users can add tags or labels to categorize and easily find related notes.
+12. Users can pin important or frequently accessed notes to keep them easily accessible.
+13. Users can share notes with others via email.
+14. Users can switch to a dark theme for better readability in low-light conditions.
+15. Users can reset all data and start fresh.
+16. Users can share notes to social media like facebook.
