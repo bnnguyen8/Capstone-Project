@@ -19,7 +19,7 @@ Welcome to Fanshawe Notes, this is the ultimate app with features like creating 
 6. Users can change note's background color to different colors: yellow, green, blue, purple, pink, gray.
 7. Users can organize their notes into folders or categories for better management.
 8. Users can set reminders for specific notes to receive notifications or alarms at designated times.
-9. Users can record voice memos or add audio recordings to their notes.
+9. Users can use the voice-to-text function to their notes.
 10. Users can mark a Note as completed
 11. Users can add tags or labels to categorize and easily find related notes.
 12. Users can pin important or frequently accessed notes to keep them easily accessible.
