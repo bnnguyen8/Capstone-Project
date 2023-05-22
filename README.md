@@ -11,8 +11,6 @@ Welcome to Fanshawe Notes, this is the ultimate app with features like creating 
 
 ## Features
 
-Users are provided with an account and password when they register at the library counter, then they download the app to use:
-
 1. Create Notes: Users can create new notes with a title and body text.
 2. Edit Notes: Users can edit the contents of existing notes.
 3. Delete Notes: Users can delete an existing note.
