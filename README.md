@@ -11,19 +11,19 @@ Welcome to Fanshawe Notes, this is the ultimate app with features like creating 
 
 ## Features
 
-1. Create Notes: Users can create new notes with a title and body text.
-2. Edit Notes: Users can edit the contents of existing notes.
-3. Delete Notes: Users can delete an existing note.
-4. Users can search by title or body text to find specific notes.
-5. Users can sort notes by date created or last modified.
-6. Users can change note's background color to different colors: yellow, green, blue, purple, pink, gray.
-7. Users can organize their notes into folders or categories for better management.
-8. Users can set reminders for specific notes to receive notifications or alarms at designated times.
-9. Users can use the voice-to-text function to their notes.
-10. Users can mark a Note as completed
-11. Users can add tags or labels to categorize and easily find related notes.
-12. Users can pin important or frequently accessed notes to keep them easily accessible.
-13. Users can share notes with others via email.
-14. Users can switch to a dark theme for better readability in low-light conditions.
-15. Users can reset all data and start fresh.
-16. Users can share notes to social media like facebook.
+1. List: User can view all added notes as list on home screen.
+2. Create Notes: User can create new notes with a title and body text.
+3. View: User can view an existing note for details.
+4. Edit Notes: User can edit the contents of existing notes.
+5. Delete Notes: User can delete an existing note.
+6. User can mark a note as completed
+7. User can mark a note as favorite
+8. User can search by title text to find specific notes.
+9. User can sort notes by date created or last modified.
+10. User can pin important notes to keep them easily accessible.
+11. User can share notes with others via email.
+12. User can change note's background color to different colors: yellow, green, blue, purple, pink, gray.
+13. User can organize their notes into categories for better management.
+14. User can reset all data and start fresh.
+15. User can set reminders for specific notes to receive notifications or alarms at designated times.
+16. User can switch to a dark theme for better readability in low-light conditions.
