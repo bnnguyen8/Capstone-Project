@@ -1,23 +1,25 @@
 import {
-	Text,
-	View,
-	Switch,
+    Text,
+    View,
+    Switch,
     Pressable,
     Alert
 } from "react-native";
 import styles from './styles'
 import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost, changeStatus } from "../../../redux/postSlice";
 import * as database from "../../../database"
 
-export default function PostItem({id, description}) {
+export default function PostItem({ id, description }) {
 
     const dispatch = useDispatch()
 
     const handleDeletePress = () => {
         Alert.alert(
-            'Delete Post', 
+            'Delete Post',
             'This action will delete this note. Are you sure?',
             [
                 {
@@ -37,6 +39,7 @@ export default function PostItem({id, description}) {
         )
     }
 
+
     return (
         <View style={styles.card}>
             <View style={styles.textContainer}>
@@ -53,7 +56,17 @@ export default function PostItem({id, description}) {
                     backgroundColor={'transparent'}
                     underlayColor='#ffdddd'
                     onPress={handleDeletePress}
-                    >Delete</MaterialIcons.Button>
+                >Delete</MaterialIcons.Button>
+                <MaterialCommunityIcons.Button name="clipboard-edit"
+                    size={24}
+                    color="#cc0000"
+                    backgroundColor={'transparent'}
+                    underlayColor='#ffdddd'
+                >
+                    Edit
+                </MaterialCommunityIcons.Button>
+
+
             </View>
         </View>
     )
