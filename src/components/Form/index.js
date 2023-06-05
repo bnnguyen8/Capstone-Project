@@ -3,7 +3,6 @@ import {
 	View,
     TextInput,
     Button,
-	Switch,
     ActivityIndicator,
 } from "react-native";
 import { useState } from "react";
@@ -18,9 +17,8 @@ export default function Form({navigation, route }) {
     const [description, setDescription] = useState('')
     const [errorMessages, setErrorMessages] = useState([])
     const [savingData, setSavingData] = useState(false)
-
+    
     const dispatch = useDispatch()
-
     const handleSavePress = async () => {
         const validate = []
 
@@ -85,7 +83,6 @@ export default function Form({navigation, route }) {
                 value={description}
                 onChangeText={setDescription}
             />
-
             <Button title='Save' onPress={handleSavePress} />
         </View>
     )
