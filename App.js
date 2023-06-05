@@ -117,6 +117,20 @@ export default function App() {
 									backgroundColor: primaryColor
 								},
 							}}>
+						<Tab.Screen name="PostsScreen" 
+						component={PostsScreen}  	
+						options={{
+								title: 'Notes',
+								tabBarIcon: ({ color, size }) => {
+									return (
+									<MaterialCommunityIcons 
+										name='post'
+										size={size} 
+										color={color} />
+									)
+								}
+							}}
+						/>
 					</Tab.Navigator>
 				</View>
 			</NavigationContainer>

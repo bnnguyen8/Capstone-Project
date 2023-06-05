@@ -14,14 +14,13 @@ import { primaryColor } from "../../includes/variables";
 
 export default function Detail({navigation, route}) {
 
-    const {id, title} = route.params
+    const {id} = route.params
     const [description, setDescription] = useState(null)
     const [notFound, setNotFound] = useState(false)
     const [loadingData, setLoadingData] = useState(true)
 
     useEffect(() => {
         (async () => {
-            navigation.setOptions({ title: title })
             const data = await loadById(id);
             setLoadingData(false)
             if(data){

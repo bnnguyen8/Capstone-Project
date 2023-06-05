@@ -13,13 +13,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { deletePost, changeStatus } from "../../../redux/postSlice";
 import * as database from "../../../database"
 
-export default function PostItem({ id, description }) {
+export default function PostItem({ id, description, navigation }) {
 
     const dispatch = useDispatch()
 
+    const handleEditPress = () => {
+        navigation.navigate("Edit", { post: { id, description } });
+    };
+
     const handleDeletePress = () => {
         Alert.alert(
-            'Delete Post',
+            'Delete Note',
             'This action will delete this note. Are you sure?',
             [
                 {
@@ -28,7 +32,7 @@ export default function PostItem({ id, description }) {
                         dispatch(deletePost(id))
                         const deleted = await database.remove(id)
                         if (!deleted) {
-                            Alert.alert("Error", "There was an error deleting the post")
+                            Alert.alert("Error", "There was an error deleting the note")
                         }
                     }
                 },
@@ -52,21 +56,21 @@ export default function PostItem({ id, description }) {
                 <View style={styles.switch}>
                 </View>
 
-                <MaterialIcons.Button name="delete-sweep" size={24} color="#cc0000"
+                <MaterialCommunityIcons.Button name="clipboard-edit"
+                    size={18}
+                    color="#cc0000"
+                    backgroundColor={'transparent'}
+                    underlayColor='#ffdddd'
+                    onPress={handleEditPress}
+                >Edit</MaterialCommunityIcons.Button>
+
+                <MaterialIcons.Button name="delete-sweep" 
+                    size={18} 
+                    color="#cc0000"
                     backgroundColor={'transparent'}
                     underlayColor='#ffdddd'
                     onPress={handleDeletePress}
                 >Delete</MaterialIcons.Button>
-                <MaterialCommunityIcons.Button name="clipboard-edit"
-                    size={24}
-                    color="#cc0000"
-                    backgroundColor={'transparent'}
-                    underlayColor='#ffdddd'
-                >
-                    Edit
-                </MaterialCommunityIcons.Button>
-
-
             </View>
         </View>
     )

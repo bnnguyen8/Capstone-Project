@@ -40,6 +40,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingTop: 10
+        paddingTop: 10,
+        fontSize: 12,
     }
 })

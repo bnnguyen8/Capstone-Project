@@ -6,18 +6,23 @@ import {
 	Switch,
     ActivityIndicator,
 } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from './styles'
+import { updatePost } from "../../redux/postSlice";
 import { useDispatch } from "react-redux";
-import { addPost } from "../../redux/postSlice";
+import { loadById } from "../../database";
 import * as database from "../../database"
 import { primaryColor } from "../../includes/variables";
 
-export default function Form({navigation, route }) {
+export default function Edit({navigation, route}) {
 
-    const [description, setDescription] = useState('')
+    const { id, description } = route.params.post;
+
+    const [updatedId, setUpdatedId] = useState(id);
+    const [updatedDescription, setUpdatedDescription] = useState(description);
     const [errorMessages, setErrorMessages] = useState([])
     const [savingData, setSavingData] = useState(false)
+    const [loadingData, setLoadingData] = useState(true)
 
     const dispatch = useDispatch()
 
@@ -33,23 +38,28 @@ export default function Form({navigation, route }) {
             setErrorMessages(validate)
         } else {
             const data = {
-                description
+                description: updatedDescription
             }
-            setSavingData(true)
-            const id = await database.save(data)
-            setSavingData(false)
-            if (id) {
-                data.id = id
-                dispatch(addPost(data))
 
-                // Reset the form
-                setDescription('')
+            console.log('Id: ' + updatedId);
+            console.log('Description: ' + updatedDescription);
+
+            setSavingData(true)
+            const saveInfo = await database.update(updatedId, data)
+            setSavingData(false)
+            if (saveInfo) {
+
                 setErrorMessages([])
+                dispatch(updatePost({
+                    id: updatedId,
+                    description: updatedDescription
+                }))
 
                 // Go back to the list
+                // PostList
                 navigation.goBack()
             } else {
-                setErrorMessages(['Error saving the post. Try again later.'])
+                setErrorMessages(['Error saving the post. Try again later'])
             }
         }
     }
@@ -80,10 +90,9 @@ export default function Form({navigation, route }) {
             )}
             <TextInput
                 style={[styles.textInput, styles.textInputDescription]}
-                // placeholder='Description'
                 multiline={true}
-                value={description}
-                onChangeText={setDescription}
+                value={updatedDescription}
+                onChangeText={setUpdatedDescription}
             />
 
             <Button title='Save' onPress={handleSavePress} />

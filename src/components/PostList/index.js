@@ -26,7 +26,9 @@ export default function PostList({
 				{posts.map((post, index) => {
 					return (
 						<Pressable key={index}  onPress={(() => handlePostPress(post))}>
-							<PostItem
+							<PostItem 
+								navigation={navigation}
+								route={route}
 								{...post}
 							/>
 						</Pressable>
