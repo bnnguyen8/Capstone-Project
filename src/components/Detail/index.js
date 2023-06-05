@@ -33,7 +33,7 @@ export default function Detail({navigation, route}) {
 
     return (
         <View style={styles.container}> 
-            <Text style={styles.id}>Id: {id}</Text>
+            {/* <Text style={styles.id}>Id: {id}</Text> */}
             {
                 loadingData ? (
                     <ActivityIndicator size="large" color={ primaryColor } />

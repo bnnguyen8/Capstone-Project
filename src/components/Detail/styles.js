@@ -18,7 +18,6 @@ export default StyleSheet.create({
     },
     description: {
         fontSize: 17,
-        color: 'black',
     },
     status: {
         fontSize: 13,
