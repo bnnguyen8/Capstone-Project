@@ -63,6 +63,15 @@ export default function PostItem({ id, description, navigation }) {
                     underlayColor='#ffdddd'
                     onPress={handleEditPress}
                 >Edit</MaterialCommunityIcons.Button>
+
+                <MaterialCommunityIcons.Button
+                name="trash-can-outline"
+                size={18}
+                color="#cc0000"
+                backgroundColor={'transparent'}
+                underlayColor='#ffdddd'
+                onPress={handleDeletePress}
+                >Delete</MaterialCommunityIcons.Button>
             </View>
         </View>
     )

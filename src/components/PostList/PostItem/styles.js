@@ -42,5 +42,6 @@ export default StyleSheet.create({
         alignItems: 'center',
         paddingTop: 10,
         fontSize: 12,
+        marginLeft: 180,
     }
 })
