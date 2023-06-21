@@ -32,11 +32,8 @@ export const postSlice = createSlice({
             state.posts = updatedPosts;
         },
         deletePost: (state, action) => {
-            const id = action.payload;
-            const filteredPosts = state.posts.filter(
-                (post) => post.id !== id
-            );
-            state.posts = filteredPosts;
+            const postId = action.payload;
+            state.posts = state.posts.filter(post => post.id !== postId);
         }
     },
 });
