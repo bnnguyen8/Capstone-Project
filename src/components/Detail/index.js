@@ -15,6 +15,7 @@ import { primaryColor } from "../../includes/variables";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCompleted, changeFavorite } from "../../redux/postSlice";
 import * as database from "../../database"
+import { AntDesign } from '@expo/vector-icons';
 
 export default function Detail({ route }) {
 
@@ -72,6 +73,9 @@ export default function Detail({ route }) {
         <View style={styles.container}> 
             <View style={styles.body}>
                 <ScrollView>
+                    {
+                        post.favorite ? <AntDesign style={styles.starIcon} name='star' size={18} color='#f6bb03' /> : <Text></Text>
+                    }
                     <Text style={styles.description}>{post.description}</Text>
                 </ScrollView>
             </View>

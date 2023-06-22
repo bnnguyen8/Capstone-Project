@@ -43,6 +43,9 @@ export default StyleSheet.create({
         opacity: 0.5,
         marginLeft: 5
     },
+    starIcon: {
+        marginRight: 5,
+    },
     body: {
         // height: 300,
         flex: 1,
