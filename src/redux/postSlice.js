@@ -34,7 +34,7 @@ export const postSlice = createSlice({
         changeFavorite: (state, action) => {
             const updatedPosts = state.posts.map((post) => {
                 if (post.id === action.payload.id) {
-                    post.completed = action.payload.completed;
+                    post.favorite = action.payload.favorite;
                 }
                 return post;
             })

@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { loadById } from "../../database";
 import { primaryColor } from "../../includes/variables";
 import { useDispatch, useSelector } from "react-redux";
-import { changeCompleted } from "../../redux/postSlice";
+import { changeCompleted, changeFavorite } from "../../redux/postSlice";
 import * as database from "../../database"
 
 export default function Detail({ route }) {
@@ -29,6 +29,25 @@ export default function Detail({ route }) {
         }
     })
 
+    const handleFavoriteChange = async () => {
+        const data = {
+            id: post.id,
+            favorite: !post.favorite
+        }
+        dispatch(changeFavorite(data))
+
+        // to avoid corruption
+        const updated = await database.update(post.id, {favorite: !post.favorite})
+        if (!updated) {
+            const data = {
+                id: post.id,
+                favorite: post.favorite
+            }
+            dispatch(changeFavorite(data))
+            Alert.alert("Error", "Error updating")
+        }
+    }
+
     const handleCompletedChange = async () => {
         const data = {
             id: post.id,
@@ -38,25 +57,32 @@ export default function Detail({ route }) {
 
         // to avoid corruption
         const updated = await database.update(post.id, {completed: !post.completed})
-        console.log("completed:", !post.completed)
-        console.log("updated:", updated)
         if (!updated) {
             const data = {
                 id: post.id,
                 completed: post.completed
             }
             dispatch(changeCompleted(data))
-            Alert.alert("Error", "Error updating status")
+            Alert.alert("Error", "Error updating")
         }
     }
     
 
     return (
         <View style={styles.container}> 
-            <View style={styles.body}> 
+            <View style={styles.body}>
                 <ScrollView>
                     <Text style={styles.description}>{post.description}</Text>
                 </ScrollView>
+            </View>
+            <View style={styles.switch}>
+                <Switch
+                    value={post.favorite}
+                    onValueChange={handleFavoriteChange}
+                    />
+                <Pressable onPress={handleFavoriteChange}>
+                    <Text style={styles.switchText }>Favorite</Text>
+                </Pressable>
             </View>
             <View style={styles.switch}>
                 <Switch

@@ -42,8 +42,18 @@ export default StyleSheet.create({
         marginLeft: 5
     },
     textContainer: {
+        // marginRight: 20,
+        // flex: 1
+    },
+    StartDesription: {
+        flex: 1,
         marginRight: 20,
-        flex: 1
+        flexDirection: 'row',
+        // justifyContent: 'space-between',
+        // alignItems: 'left',
+    },
+    starIcon: {
+        marginRight: 5,
     },
     button: {
         // backgroundColor: 'red',

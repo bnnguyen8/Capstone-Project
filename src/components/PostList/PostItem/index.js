@@ -12,16 +12,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost, changeStatus } from "../../../redux/postSlice";
 import * as database from "../../../database"
+import { AntDesign } from '@expo/vector-icons';
 
 export default function PostItem({ id, description, completed, favorite, navigation }) {
 
     const dispatch = useDispatch()
-
-    console.log("id:", id)
-    console.log("description:", description)
-    console.log("completed:", completed)
-    console.log("favorite:", favorite)
-
     const handleEditPress = () => {
         navigation.navigate("Edit", { post: { id, description } });
     };
@@ -52,7 +47,10 @@ export default function PostItem({ id, description, completed, favorite, navigat
 
     return (
         <View style={cardStyle}>
-            <View style={styles.textContainer}>
+            <View style={[styles.textContainer, styles.StartDesription]}>
+                {
+                    favorite ? <AntDesign style={styles.starIcon} name='star' size={18} color='#f6bb03' /> : <Text></Text>
+                }
                 <Text style={styles.description}>
                     {description}
                 </Text>
