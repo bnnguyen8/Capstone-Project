@@ -2,7 +2,7 @@ import { Text, View, ScrollView, Pressable, TextInput } from "react-native";
 import { useState } from "react";
 import PostItem from "./PostItem";
 import styles from "./styles";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function PostList({
 	navigation,

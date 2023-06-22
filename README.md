@@ -18,7 +18,7 @@ Welcome to Fanshawe Notes, this is the ultimate app with features like creating 
 5. Delete Notes: User can delete an existing note.
 6. User can mark a note as completed
 7. User can mark a note as favorite
-8. User can search by title text to find specific notes.
+8. User can search by text to find specific notes.
 9. User can sort notes by date created or last modified.
 10. User can pin important notes to keep them easily accessible.
 11. User can share notes with others via email.
