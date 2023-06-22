@@ -31,7 +31,9 @@ export default function Form({navigation, route }) {
             setErrorMessages(validate)
         } else {
             const data = {
-                description
+                description,
+                completed: false,
+                favorite: false
             }
             setSavingData(true)
             const id = await database.save(data)

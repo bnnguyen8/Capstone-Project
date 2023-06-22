@@ -49,6 +49,7 @@ export default function Detail({ route }) {
             Alert.alert("Error", "Error updating status")
         }
     }
+    
 
     return (
         <View style={styles.container}> 

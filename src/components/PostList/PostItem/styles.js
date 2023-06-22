@@ -12,6 +12,16 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between'
     },
+    cardCompleted: {
+        backgroundColor: '#e5e5e5',
+        marginTop: 10,
+        marginHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+        padding: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
     title: {
         fontSize: 18,
         fontWeight: 'bold',

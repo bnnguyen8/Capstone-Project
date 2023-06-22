@@ -13,9 +13,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { deletePost, changeStatus } from "../../../redux/postSlice";
 import * as database from "../../../database"
 
-export default function PostItem({ id, description, navigation }) {
+export default function PostItem({ id, description, completed, favorite, navigation }) {
 
     const dispatch = useDispatch()
+
+    console.log("id:", id)
+    console.log("description:", description)
+    console.log("completed:", completed)
+    console.log("favorite:", favorite)
 
     const handleEditPress = () => {
         navigation.navigate("Edit", { post: { id, description } });
@@ -43,9 +48,10 @@ export default function PostItem({ id, description, navigation }) {
         )
     }
 
+    const cardStyle = completed ? styles.cardCompleted : styles.card;
 
     return (
-        <View style={styles.card}>
+        <View style={cardStyle}>
             <View style={styles.textContainer}>
                 <Text style={styles.description}>
                     {description}
@@ -53,9 +59,6 @@ export default function PostItem({ id, description, navigation }) {
             </View>
 
             <View style={styles.button}>
-                <View style={styles.switch}>
-                </View>
-
                 <MaterialCommunityIcons.Button name="clipboard-edit"
                     size={18}
                     color="#cc0000"

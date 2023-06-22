@@ -20,7 +20,7 @@ export default StyleSheet.create({
         marginTop: 10
     },
     textInputDescription: {
-        height: 80,
+        height: 220,
         textAlignVertical: 'top'
     },
     errorMessageTitle: {
