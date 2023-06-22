@@ -22,6 +22,15 @@ export const postSlice = createSlice({
             })
             state.posts = updatedPosts;
         },
+        changeCompleted: (state, action) => {
+            const updatedPosts = state.posts.map((post) => {
+                if (post.id === action.payload.id) {
+                    post.completed = action.payload.completed;
+                }
+                return post;
+            })
+            state.posts = updatedPosts;
+        },
         changeStatus: (state, action) => {
             const updatedPosts = state.posts.map((post) => {
                 if (post.id === action.payload.id) {
@@ -38,5 +47,5 @@ export const postSlice = createSlice({
     },
 });
 
-export const { setPosts, addPost, updatePost, changeStatus, deletePost } = postSlice.actions;
+export const { setPosts, addPost, updatePost, changeStatus, changeCompleted, deletePost } = postSlice.actions;
 export default postSlice.reducer;

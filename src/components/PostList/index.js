@@ -17,7 +17,7 @@ export default function PostList({
 	};
 
 	const handlePostPress = (post) => {
-		navigation.navigate("Detail", post);
+		navigation.navigate("Detail", {post: post});
 	};
 
 	return (
