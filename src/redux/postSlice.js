@@ -40,6 +40,9 @@ export const postSlice = createSlice({
             })
             state.posts = updatedPosts;
         },
+        searchPost: (state, action) => {
+            state.posts = action.payload.posts;
+        },
         changeStatus: (state, action) => {
             const updatedPosts = state.posts.map((post) => {
                 if (post.id === action.payload.id) {
@@ -56,5 +59,5 @@ export const postSlice = createSlice({
     },
 });
 
-export const { setPosts, addPost, updatePost, changeStatus, changeCompleted, changeFavorite, deletePost } = postSlice.actions;
+export const { setPosts, addPost, updatePost, changeStatus, changeCompleted, changeFavorite, searchPost, deletePost } = postSlice.actions;
 export default postSlice.reducer;

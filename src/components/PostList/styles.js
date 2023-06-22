@@ -22,6 +22,16 @@ export default StyleSheet.create({
         }
 
    },
+   textInput: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        backgroundColor: '#fff',
+        marginBottom: 10,
+        marginTop: 10,
+        margin: 50,
+    },
    addButtonText: {
     width: 60,
     height: 60,
