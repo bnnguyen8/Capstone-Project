@@ -11,10 +11,10 @@ Welcome to Fanshawe Notes, this is the ultimate app with features like creating 
 
 ## Features
 
-1. List: User can view all added notes as list on home screen.
-2. Create Notes: User can create new notes with a title and body text.
-3. View: User can view an existing note for details.
-4. Edit Notes: User can edit the contents of existing notes.
+1. List: User can view all added notes as list on home screen. 
+2. Create Notes: User can create new note with text. 
+3. View: User can view an existing note for details in case it has long text. 
+4. Edit Notes: User can edit the content of existing note. 
 5. Delete Notes: User can delete an existing note.
 6. User can mark a note as completed
 7. User can mark a note as favorite
