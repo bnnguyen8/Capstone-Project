@@ -89,7 +89,7 @@ export default function Detail({ route }) {
                 </Pressable>
             </View>
             <View style={styles.switch}>
-                <Switch
+                <Switch style={styles.firstswitch}
                     value={post.completed}
                     onValueChange={handleCompletedChange}
                     />

@@ -1,6 +1,6 @@
 # Fanshawe Notes
 
-Welcome to Fanshawe Notes, this is the ultimate app with features like creating and editing notes, searching by title or text, sorting by date, customizable backgrounds, folders, reminders, voice memos, tags, and sharing via email and social media. Our app empowers you to stay organized, collaborate efficiently, and never miss a deadline. Whether you're a student, professional, or simply someone who loves to stay organized, this app is the go-to app for seamless note-taking and effective information management.
+Welcome to Fanshawe Notes, this is the ultimate app with features like creating and editing notes, searching by text, sorting by date, customizable backgrounds, folders, reminders, voice memos, tags, and sharing via email and social media. Our app empowers you to stay organized, collaborate efficiently, and never miss a deadline. Whether you're a student, professional, or simply someone who loves to stay organized, this app is the go-to app for seamless note-taking and effective information management.
 
 ## Group A
 

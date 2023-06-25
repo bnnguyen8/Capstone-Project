@@ -38,6 +38,9 @@ export default StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
     },
+    firstswitch: {
+        marginVertical: 10,
+    },
     switchText: {
         fontSize: 12,
         opacity: 0.5,
