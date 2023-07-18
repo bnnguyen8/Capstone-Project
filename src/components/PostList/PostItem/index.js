@@ -54,7 +54,7 @@ export default function PostItem({ id, description, completed, favorite, importa
                     {description}
                 </Text>
                 {
-                    important ? <Text style={styles.description}>[pinned] </Text> : <Text></Text>
+                    important ? <Text style={styles.description}> [pinned] </Text> : <Text></Text>
                 }
             </View>
 

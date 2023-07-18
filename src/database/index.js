@@ -3,4 +3,4 @@
 // export { load, save, update };
 
 export { load, loadPublished, loadByCreated, loadById } from "./read";
-export { save, update, remove } from "./write";
+export { save, update, remove, removeAll } from "./write";
