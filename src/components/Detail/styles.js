@@ -39,7 +39,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
     },
     firstswitch: {
-        marginVertical: 10,
+        marginVertical: 0,
     },
     switchText: {
         fontSize: 12,
@@ -48,6 +48,9 @@ export default StyleSheet.create({
     },
     starIcon: {
         marginRight: 5,
+    },
+    TouchMe: {
+        marginLeft: 5,
     },
     body: {
         // height: 300,

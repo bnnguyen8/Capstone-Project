@@ -12,7 +12,7 @@ import { deletePost, changeStatus } from "../../../redux/postSlice";
 import * as database from "../../../database"
 import { AntDesign } from '@expo/vector-icons';
 
-export default function PostItem({ id, description, completed, favorite, important, navigation }) {
+export default function PostItem({ id, description, color, completed, favorite, important, navigation }) {
 
     const dispatch = useDispatch()
     const handleEditPress = () => {
@@ -41,7 +41,18 @@ export default function PostItem({ id, description, completed, favorite, importa
         )
     }
 
-    const cardStyle = completed ? styles.cardCompleted : styles.card;
+    var cardStyle = completed ? styles.cardCompleted : styles.card;
+
+    if(!completed && color != "None") {
+        if(color == "Yellow")
+            cardStyle=styles.cardColorYellow
+        else if(color == "Green")
+            cardStyle=styles.cardColorGreen
+        else if(color == "Blue")
+            cardStyle=styles.cardColorBlue
+        else if(color == "Purple")
+            cardStyle=styles.cardColorPurple
+    }
 
     return (
         <View style={cardStyle}>

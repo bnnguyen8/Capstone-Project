@@ -22,6 +22,48 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between'
     },
+    cardColorYellow: {
+        backgroundColor: 'yellow',
+        color: 'white',
+        marginTop: 10,
+        marginHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+        padding: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
+    cardColorGreen: {
+        backgroundColor: 'green',
+        color: 'white',
+        marginTop: 10,
+        marginHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+        padding: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
+    cardColorBlue: {
+        backgroundColor: 'blue',
+        marginTop: 10,
+        marginHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+        padding: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
+    cardColorPurple: {
+        backgroundColor: 'purple',
+        marginTop: 10,
+        marginHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+        padding: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
     title: {
         fontSize: 18,
         fontWeight: 'bold',

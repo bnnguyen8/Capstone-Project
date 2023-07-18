@@ -22,6 +22,15 @@ export const postSlice = createSlice({
             })
             state.posts = updatedPosts;
         },
+        changeColor: (state, action) => {
+            const updatedPosts = state.posts.map((post) => {
+                if (post.id === action.payload.id) {
+                    post.color = action.payload.color;
+                }
+                return post;
+            })
+            state.posts = updatedPosts;
+        },
         changeCompleted: (state, action) => {
             const updatedPosts = state.posts.map((post) => {
                 if (post.id === action.payload.id) {
@@ -68,5 +77,5 @@ export const postSlice = createSlice({
     },
 });
 
-export const { setPosts, addPost, updatePost, changeStatus, changeCompleted, changeImportant, changeFavorite, searchPost, deletePost } = postSlice.actions;
+export const { setPosts, addPost, updatePost, changeStatus, changeColor, changeCompleted, changeImportant, changeFavorite, searchPost, deletePost } = postSlice.actions;
 export default postSlice.reducer;

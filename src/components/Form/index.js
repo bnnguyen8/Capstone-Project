@@ -35,6 +35,7 @@ export default function Form({navigation, route }) {
                 description,
                 created: new Date().toISOString(),
                 modified: new Date().toISOString(),
+                color: "None",
                 completed: false,
                 favorite: false,
                 important: false,
