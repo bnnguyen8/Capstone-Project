@@ -33,6 +33,7 @@ export default function Detail({ route }) {
     const dispatch = useDispatch()
 
     const [selectedColor, setSelectedColor] = useState(post.color);
+    const [important, setImportant] = useState(post.important);
 
     console.log(" ----- ")
     // console.log(selectedColor)
@@ -99,21 +100,23 @@ export default function Detail({ route }) {
     }
 
     const handleImportantChange = async () => {
+        console.log(post.important)
         const data = {
             id: post.id,
             important: !post.important
         }
         dispatch(changeImportant(data))
+        setImportant(!important)
 
         const updated = await database.update(post.id, {important: !post.important})
-        if (!updated) {
-            const data = {
-                id: post.id,
-                important: post.important
-            }
-            dispatch(changeImportant(data))
-            Alert.alert("Error", "Error updating")
-        }
+        // if (!updated) {
+        //     const data = {
+        //         id: post.id,
+        //         important: post.important
+        //     }
+        //     dispatch(changeImportant(data))
+        //     Alert.alert("Error", "Error updating")
+        // }
 
         var posts = await database.load();
         dispatch(setPosts(posts));
@@ -163,7 +166,7 @@ export default function Detail({ route }) {
             </View>
             <View style={styles.switch}>
                 <Switch style={styles.firstswitch}
-                    value={post.important}
+                    value={important}
                     onValueChange={handleImportantChange}
                     />
                 <Pressable onPress={handleImportantChange}>
