@@ -19,11 +19,11 @@ Welcome to Fanshawe Notes, this is the ultimate app with features like creating 
 6. User can mark a note as completed
 7. User can mark a note as favorite
 8. User can search by text to find specific notes.
-9. User can sort notes by date created or last modified.
-10. User can pin important notes to keep them easily accessible.
+9. User can sort notes by date created desc or last modified desc.
+10. User can pin notes to top to keep them easily accessible.
 11. User can share notes with others via email.
-12. User can change note's background color to different colors: yellow, green, blue, purple, pink, gray.
+12. User can change note's background color to different colors: yellow, green, blue, purple.
 13. User can organize their notes into categories for better management.
-14. User can reset all data and start fresh.
+14. User can clear all notes.
 15. User can set reminders for specific notes to receive notifications or alarms at designated times.
 16. User can switch to a dark theme for better readability in low-light conditions.
