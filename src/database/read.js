@@ -7,21 +7,54 @@ import { db } from "./config";
  * returns an array with notes 
  */
 export async function load() {
-    // const querySnapshot = await getDocs(collection(db, "notes"));
-    // return processQuerySnapshot(querySnapshot);
+    const q1 = query(
+        collection(db, "notes"), 
+        where("important", "==", true),
+        orderBy("important", "desc")
+    );
+    const querySnapshot1 = await getDocs(q1);
+    const data1 = processQuerySnapshot(querySnapshot1);
+    // return data1
 
-    const q = query(collection(db, "notes"), orderBy("modified", "desc"));
-    const querySnapshot = await getDocs(q);
-    return processQuerySnapshot(querySnapshot);
+    const q2 = query(
+        collection(db, "notes"), 
+        orderBy("modified", "desc")
+    );
+    const querySnapshot2 = await getDocs(q2);
+    const data2 = processQuerySnapshot(querySnapshot2);
+
+    const notesNotInData1 = data2.filter(note2 => {
+        return !data1.some(note1 => note1.id === note2.id);
+    });
+
+    return [...data1, ...notesNotInData1]
 }
+
 export async function loadByCreated() {
-    // const querySnapshot = await getDocs(collection(db, "notes"));
-    // return processQuerySnapshot(querySnapshot);
+    const q1 = query(
+        collection(db, "notes"), 
+        where("important", "==", true),
+        orderBy("important", "desc")
+    );
+    const querySnapshot1 = await getDocs(q1);
+    const data1 = processQuerySnapshot(querySnapshot1);
+    // return data1
 
-    const q = query(collection(db, "notes"), orderBy("created", "desc"));
-    const querySnapshot = await getDocs(q);
-    return processQuerySnapshot(querySnapshot);
+    const q2 = query(
+        collection(db, "notes"), 
+        orderBy("created", "desc")
+    );
+    const querySnapshot2 = await getDocs(q2);
+    const data2 = processQuerySnapshot(querySnapshot2);
+
+    const notesNotInData1 = data2.filter(note2 => {
+        return !data1.some(note1 => note1.id === note2.id);
+    });
+
+    return [...data1, ...notesNotInData1]
 }
+
+
 
 /**
  * Converts a Firebase query snapshot into an array of notes

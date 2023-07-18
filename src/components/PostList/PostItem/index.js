@@ -12,7 +12,7 @@ import { deletePost, changeStatus } from "../../../redux/postSlice";
 import * as database from "../../../database"
 import { AntDesign } from '@expo/vector-icons';
 
-export default function PostItem({ id, description, completed, favorite, navigation }) {
+export default function PostItem({ id, description, completed, favorite, important, navigation }) {
 
     const dispatch = useDispatch()
     const handleEditPress = () => {
@@ -49,9 +49,13 @@ export default function PostItem({ id, description, completed, favorite, navigat
                 {
                     favorite ? <AntDesign style={styles.starIcon} name='star' size={18} color='#f6bb03' /> : <Text></Text>
                 }
-                <Text style={styles.description}>
+                
+                <Text>
                     {description}
                 </Text>
+                {
+                    important ? <Text style={styles.description}>[pinned] </Text> : <Text></Text>
+                }
             </View>
 
             <View style={styles.button}>

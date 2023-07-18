@@ -36,7 +36,8 @@ export default function Form({navigation, route }) {
                 created: new Date().toISOString(),
                 modified: new Date().toISOString(),
                 completed: false,
-                favorite: false
+                favorite: false,
+                important: false,
             }
             setSavingData(true)
             const id = await database.save(data)

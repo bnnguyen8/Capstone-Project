@@ -13,9 +13,11 @@ import { useEffect, useState } from "react";
 import { loadById } from "../../database";
 import { primaryColor } from "../../includes/variables";
 import { useDispatch, useSelector } from "react-redux";
-import { changeCompleted, changeFavorite } from "../../redux/postSlice";
+import { changeCompleted, changeFavorite, changeImportant } from "../../redux/postSlice";
 import * as database from "../../database"
 import { AntDesign } from '@expo/vector-icons';
+
+import { setPosts } from "../../redux/postSlice";
 
 export default function Detail({ route }) {
 
@@ -56,7 +58,6 @@ export default function Detail({ route }) {
         }
         dispatch(changeCompleted(data))
 
-        // to avoid corruption
         const updated = await database.update(post.id, {completed: !post.completed})
         if (!updated) {
             const data = {
@@ -67,7 +68,27 @@ export default function Detail({ route }) {
             Alert.alert("Error", "Error updating")
         }
     }
-    
+
+    const handleImportantChange = async () => {
+        const data = {
+            id: post.id,
+            important: !post.important
+        }
+        dispatch(changeImportant(data))
+
+        const updated = await database.update(post.id, {important: !post.important})
+        if (!updated) {
+            const data = {
+                id: post.id,
+                important: post.important
+            }
+            dispatch(changeImportant(data))
+            Alert.alert("Error", "Error updating")
+        }
+
+        var posts = await database.load();
+        dispatch(setPosts(posts));
+    }
 
     return (
         <View style={styles.container}> 
@@ -95,6 +116,17 @@ export default function Detail({ route }) {
                     />
                 <Pressable onPress={handleCompletedChange}>
                     <Text style={styles.switchText }>Completed</Text>
+                </Pressable>
+            </View>
+            <View style={styles.switch}>
+                <Switch style={styles.firstswitch}
+                    value={post.important}
+                    onValueChange={handleImportantChange}
+                    />
+                <Pressable onPress={handleImportantChange}>
+                    <Text style={styles.switchText }>
+                    {!post.important ? "Pin this note to top" : "Pinned"}
+                    </Text>
                 </Pressable>
             </View>
         </View>
