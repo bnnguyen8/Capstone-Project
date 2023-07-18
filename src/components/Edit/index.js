@@ -38,11 +38,9 @@ export default function Edit({navigation, route}) {
             setErrorMessages(validate)
         } else {
             const data = {
-                description: updatedDescription
+                description: updatedDescription,
+                modified: new Date().toISOString(),
             }
-
-            console.log('Id: ' + updatedId);
-            console.log('Description: ' + updatedDescription);
 
             setSavingData(true)
             const saveInfo = await database.update(updatedId, data)
@@ -52,7 +50,8 @@ export default function Edit({navigation, route}) {
                 setErrorMessages([])
                 dispatch(updatePost({
                     id: updatedId,
-                    description: updatedDescription
+                    description: updatedDescription,
+                    modified: new Date().toISOString(),
                 }))
 
                 // Go back to the list

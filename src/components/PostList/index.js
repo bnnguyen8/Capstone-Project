@@ -12,6 +12,7 @@ export default function PostList({
 	const [searchTerm, setSearchTerm] = useState("");
 
 	const posts = useSelector((state) => state.post.posts);
+	
 
 	const handleAddNotePress = () => {
 		navigation.navigate("Add");
@@ -28,6 +29,14 @@ export default function PostList({
 			post.description.toLowerCase().includes(searchTerm.toLowerCase())
 		);
 	}
+
+	// Filter the posts based on the modified attribute
+	// const sortModified = useSelector((state) => state.sortnotes.sortModified)
+	// if (!sortModified) {
+	// 	// TODO: Sort by created descending
+	// 	filteredPosts.sort((a, b) => b.created - a.created); // Sort by created descending
+	// }
+	
 	
 	return (
 		<>

@@ -8,6 +8,7 @@ import {
     ScrollView,
 } from "react-native";
 import styles from './styles'
+import SortNotes from "../../components/SortNotes";
 import Preference from "../../components/Preference";
 import LocalNotification from "../../components/LocalNotification";
 import PushNotification from "../../components/PushNotification";
@@ -15,9 +16,10 @@ import PushNotification from "../../components/PushNotification";
 export default function SettingsScreen() {
     return (
         <>
-            <Preference />
-            <LocalNotification />
-            <PushNotification />
+            <SortNotes />
+            {/* <Preference /> */}
+            {/* <LocalNotification /> */}
+            {/* <PushNotification /> */}
         </>
     )
 }

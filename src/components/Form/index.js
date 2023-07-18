@@ -30,8 +30,11 @@ export default function Form({navigation, route }) {
             console.log('Invalid:', validate)
             setErrorMessages(validate)
         } else {
+
             const data = {
                 description,
+                created: new Date().toISOString(),
+                modified: new Date().toISOString(),
                 completed: false,
                 favorite: false
             }

@@ -120,17 +120,29 @@ export default function App() {
 						<Tab.Screen name="PostsScreen" 
 						component={PostsScreen}  	
 						options={{
-								title: 'Notes',
+							title: 'Notes',
+							tabBarIcon: ({ color, size }) => {
+								return (
+								<MaterialCommunityIcons 
+									name='post'
+									size={size} 
+									color={color} />
+								)
+							}
+						}} />
+
+						<Tab.Screen name="SettingsScreen" 
+							component={SettingsScreen} 
+							options={{
+								title: 'Settings',
 								tabBarIcon: ({ color, size }) => {
 									return (
-									<MaterialCommunityIcons 
-										name='post'
+									<Ionicons name="settings-sharp"
 										size={size} 
 										color={color} />
 									)
 								}
-							}}
-						/>
+						}} />
 					</Tab.Navigator>
 				</View>
 			</NavigationContainer>

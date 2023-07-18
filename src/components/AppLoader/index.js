@@ -1,20 +1,25 @@
 import { useEffect } from "react";
 import * as database from "../../database"
 import * as SplashScreen from "expo-splash-screen";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../../redux/postSlice";
 
 export default function AppLoader() {
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        // IIFE - Immediately Invoked Function Expression
-		(async () => {
-            // Load the database
-            const posts = await database.load();
-            dispatch(setPosts(posts));
+    const sortModified = useSelector((state) => state.sortnotes.sortModified)
 
-            // Hides SplashScreen that was prevented to auto hide
+    useEffect(() => {
+		(async () => {
+            if(sortModified){
+                console.log("Sort by modified desc");
+                var posts = await database.load();
+            } else {
+                console.log("Sort by created desc");
+                var posts = await database.loadByCreated();
+            }
+                
+            dispatch(setPosts(posts));
             SplashScreen.hideAsync()
                 .then((hidden) => {
                     // console.log(`hidden: ${hidden}`);

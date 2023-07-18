@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const sortnotesSlice = createSlice({
-    name: 'preference',
+    name: 'sortnotes',
     initialState,
     reducers: {
         toggleCreatedModified: (state) => {
@@ -14,7 +14,6 @@ export const sortnotesSlice = createSlice({
     }
 });
 
-// console.log("Slice", sortnotesSlice);
 
 export const { toggleCreatedModified } = sortnotesSlice.actions;
 export default sortnotesSlice.reducer;

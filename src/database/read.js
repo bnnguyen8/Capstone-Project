@@ -1,4 +1,5 @@
-import { collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+// import { collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query, where, doc, getDoc, orderBy, QuerySnapshot } from "firebase/firestore";
 import { db } from "./config";
 
 /**
@@ -6,7 +7,19 @@ import { db } from "./config";
  * returns an array with notes 
  */
 export async function load() {
-    const querySnapshot = await getDocs(collection(db, "notes"));
+    // const querySnapshot = await getDocs(collection(db, "notes"));
+    // return processQuerySnapshot(querySnapshot);
+
+    const q = query(collection(db, "notes"), orderBy("modified", "desc"));
+    const querySnapshot = await getDocs(q);
+    return processQuerySnapshot(querySnapshot);
+}
+export async function loadByCreated() {
+    // const querySnapshot = await getDocs(collection(db, "notes"));
+    // return processQuerySnapshot(querySnapshot);
+
+    const q = query(collection(db, "notes"), orderBy("created", "desc"));
+    const querySnapshot = await getDocs(q);
     return processQuerySnapshot(querySnapshot);
 }
 
