@@ -15,18 +15,29 @@ export default StyleSheet.create({
     },
     cardCompleted: {
         backgroundColor: '#e5e5e5',
+        
+    },
+    textColorWhite: {
+        color: '#fff',
+    },
+    textColorBlack: {
+        color: '#000',
     },
     cardColorYellow: {
         backgroundColor: 'yellow',
+        color: '#fff',
     },
     cardColorGreen: {
         backgroundColor: 'green',
+        color: '#fff',
     },
     cardColorBlue: {
         backgroundColor: 'blue',
+        color: 'red',
     },
     cardColorPurple: {
         backgroundColor: 'purple',
+        color: '#fff',
     },
     title: {
         fontSize: 18,

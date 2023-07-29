@@ -22,6 +22,7 @@ import { changeCompleted, changeColor, changeFavorite, changeImportant } from ".
 import * as database from "../../database"
 import { AntDesign } from '@expo/vector-icons';
 import { setPosts } from "../../redux/postSlice";
+import { FontAwesome } from '@expo/vector-icons'; 
 
 const colors = ['None', 'Yellow', 'Green', 'Blue', 'Purple'];
 
@@ -124,9 +125,22 @@ export default function Detail({ route }) {
         	<View style={styles.container}>
                 <View style={styles.body}>
                     <ScrollView>
-                        {
-                            post.favorite ? <AntDesign style={styles.starIcon} name='star' size={18} color='#f6bb03' /> : <Text></Text>
-                        }
+                        <View style={styles.switch}>
+                            <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                            {post.favorite && (
+                                <AntDesign style={styles.starIcon} name='star' size={18} color='#f6bb03' />
+                            )}
+                            {post.category == "Work" && (
+                                <AntDesign name="carryout" size={18} color="black" />
+                            )}
+                            {post.category == "Study" && (
+                                <Ionicons name="book-outline" size={18} color="black" />
+                            )}
+                            {post.category == "Personal" && (
+                                <FontAwesome name="user-o" size={18} color="black" />
+                            )}
+                            </View>
+                        </View>
                         <Text style={styles.description}>{post.description}</Text>
                     </ScrollView>
                 </View>

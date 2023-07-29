@@ -17,6 +17,7 @@ export const postSlice = createSlice({
             const updatedPosts = state.posts.map((post) => {
                 if (post.id === action.payload.id) {
                     post.description = action.payload.description;
+                    post.category = action.payload.category;
                 }
                 return post;
             })

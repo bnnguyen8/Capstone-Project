@@ -11,12 +11,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { deletePost, changeStatus } from "../../../redux/postSlice";
 import * as database from "../../../database"
 import { AntDesign } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from '@expo/vector-icons'; 
 
-export default function PostItem({ id, description, color, completed, favorite, important, navigation }) {
+export default function PostItem({ id, description, color, category, completed, favorite, important, navigation }) {
 
     const dispatch = useDispatch()
     const handleEditPress = () => {
-        navigation.navigate("Edit", { post: { id, description } });
+        navigation.navigate("Edit", { post: { id, description, category } });
     };
 
     const handleDeletePress = () => {
@@ -42,6 +44,7 @@ export default function PostItem({ id, description, color, completed, favorite, 
     }
 
     var cardStyle = styles.card;
+    var textColor = styles.textColorBlack;
 
     if(completed) {
         cardStyle=[styles.card, styles.cardCompleted]
@@ -54,6 +57,8 @@ export default function PostItem({ id, description, color, completed, favorite, 
             cardStyle=[styles.card, styles.cardColorBlue]
         else if(color == "Purple")
             cardStyle=[styles.card, styles.cardColorPurple]
+
+        textColor = styles.textColorWhite;
     }
 
     return (
@@ -62,10 +67,16 @@ export default function PostItem({ id, description, color, completed, favorite, 
                 {
                     favorite ? <AntDesign style={styles.starIcon} name='star' size={18} color='#f6bb03' /> : <Text></Text>
                 }
-                
-                <Text>
-                    {description}
-                </Text>
+                {category == "Work" && (
+                    <AntDesign name="carryout" size={18} color="black" />
+                )}
+                {category == "Study" && (
+                    <Ionicons name="book-outline" size={18} color="black" />
+                )}
+                {category == "Personal" && (
+                    <FontAwesome name="user-o" size={18} color="black" />
+                )}
+                <Text style={textColor} > {description}</Text>
                 {
                     important ? <Text style={styles.description}> <AntDesign name="pushpino" size={12} color="black" /> </Text> : <Text></Text>
                 }

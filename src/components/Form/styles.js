@@ -40,6 +40,30 @@ export default StyleSheet.create({
         color: "#444",
         fontSize: 21,
         marginTop: 10
+    },
+    switch: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginBottom: 10,
+    },
+    firstswitch: {
+        marginVertical: 0,
+    },
+    switchText: {
+        fontSize: 12,
+        opacity: 0.5,
+        marginLeft: 5
+    },
+    starIcon: {
+        marginRight: 5,
+    },
+    TouchMe: {
+        marginLeft: 28,
+        marginTop: 10,
+        marginBottom: 10,
+        fontWeight: 'bold',
+    },
+    IconCat: {
+        margin: 10,
     }
-
 })

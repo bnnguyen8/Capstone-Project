@@ -9,6 +9,9 @@ export default StyleSheet.create({
         paddingBottom: 10,
     },
     containerLightTheme: {
+        width: '100%',
+        height: '100%',
+        paddingBottom: 10,
     },
     container: {
         padding: 20,
@@ -35,6 +38,7 @@ export default StyleSheet.create({
     },
     description: {
         fontSize: 17,
+        marginTop: 10,
     },
     status: {
         fontSize: 13,

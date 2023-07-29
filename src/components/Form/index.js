@@ -4,6 +4,7 @@ import {
     TextInput,
     Button,
     ActivityIndicator,
+    TouchableOpacity
 } from "react-native";
 import { useState } from "react";
 import styles from './styles'
@@ -11,12 +12,16 @@ import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/postSlice";
 import * as database from "../../database"
 import { primaryColor } from "../../includes/variables";
+import { Ionicons } from "@expo/vector-icons";
+import { AntDesign } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
 
 export default function Form({navigation, route }) {
 
     const [description, setDescription] = useState('')
     const [errorMessages, setErrorMessages] = useState([])
     const [savingData, setSavingData] = useState(false)
+    const [category, setCategory] = useState('Work')
     
     const dispatch = useDispatch()
     const handleSavePress = async () => {
@@ -35,6 +40,7 @@ export default function Form({navigation, route }) {
                 description,
                 created: new Date().toISOString(),
                 modified: new Date().toISOString(),
+                category: category,
                 color: "None",
                 completed: false,
                 favorite: false,
@@ -90,6 +96,33 @@ export default function Form({navigation, route }) {
                 value={description}
                 onChangeText={setDescription}
             />
+
+            <View style={styles.switch}>
+                <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                    <TouchableOpacity key="Work" style={styles.TouchMe} onPress={() => setCategory("Work")}>
+                        <Text>
+                            <Ionicons name={category === "Work" ? "radio-button-on" : "radio-button-off"} size={18} />
+                            <AntDesign name="carryout" size={18} color="black"  style={styles.IconCat} />
+                            <Text> Work</Text>
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity key="Study" style={styles.TouchMe} onPress={() => setCategory("Study")}>
+                        <Text>
+                            <Ionicons name={category === "Study" ? "radio-button-on" : "radio-button-off"} size={18} />
+                            <Ionicons name="book-outline" size={18} color="black" />
+                            <Text> Study</Text>
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity key="Personal" style={styles.TouchMe} onPress={() => setCategory("Personal")}>
+                        <Text>
+                            <Ionicons name={category === "Personal" ? "radio-button-on" : "radio-button-off"} size={18} />
+                            <FontAwesome name="user-o" size={18} color="black" />
+                            <Text> Personal</Text>
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+
             <Button title='Save' onPress={handleSavePress} />
         </View>
     )

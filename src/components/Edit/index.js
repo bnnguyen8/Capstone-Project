@@ -5,6 +5,7 @@ import {
     Button,
 	Switch,
     ActivityIndicator,
+    TouchableOpacity
 } from "react-native";
 import { useEffect, useState } from "react";
 import styles from './styles'
@@ -13,16 +14,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadById } from "../../database";
 import * as database from "../../database"
 import { primaryColor } from "../../includes/variables";
+import { Ionicons } from "@expo/vector-icons";
+import { AntDesign } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
 
 export default function Edit({navigation, route}) {
 
-    const { id, description } = route.params.post;
+    const { id, description, category } = route.params.post;
 
     const [updatedId, setUpdatedId] = useState(id);
     const [updatedDescription, setUpdatedDescription] = useState(description);
     const [errorMessages, setErrorMessages] = useState([])
     const [savingData, setSavingData] = useState(false)
     const [loadingData, setLoadingData] = useState(true)
+    const [updateCategory, setUpdateCategory] = useState(category)
 
     const dispatch = useDispatch()
 
@@ -39,18 +44,21 @@ export default function Edit({navigation, route}) {
         } else {
             const data = {
                 description: updatedDescription,
+                category: updateCategory,
                 modified: new Date().toISOString(),
             }
 
-            setSavingData(true)
+            // setSavingData(true)
             const saveInfo = await database.update(updatedId, data)
-            setSavingData(false)
+            // setSavingData(false)
+            // return
             if (saveInfo) {
 
                 setErrorMessages([])
                 dispatch(updatePost({
                     id: updatedId,
                     description: updatedDescription,
+                    category: updateCategory,
                     modified: new Date().toISOString(),
                 }))
 
@@ -101,6 +109,32 @@ export default function Edit({navigation, route}) {
                         value={updatedDescription}
                         onChangeText={setUpdatedDescription}
                     />
+
+                    <View style={styles.switch}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                            <TouchableOpacity key="Work" style={styles.TouchMe} onPress={() => setUpdateCategory("Work")}>
+                                <Text>
+                                    <Ionicons name={updateCategory === "Work" ? "radio-button-on" : "radio-button-off"} size={18} />
+                                    <AntDesign name="carryout" size={18} color="black"  style={styles.IconCat} />
+                                    <Text> Work</Text>
+                                </Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity key="Study" style={styles.TouchMe} onPress={() => setUpdateCategory("Study")}>
+                                <Text>
+                                    <Ionicons name={updateCategory === "Study" ? "radio-button-on" : "radio-button-off"} size={18} />
+                                    <Ionicons name="book-outline" size={18} color="black" />
+                                    <Text> Study</Text>
+                                </Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity key="Personal" style={styles.TouchMe} onPress={() => setUpdateCategory("Personal")}>
+                                <Text>
+                                    <Ionicons name={updateCategory === "Personal" ? "radio-button-on" : "radio-button-off"} size={18} />
+                                    <FontAwesome name="user-o" size={18} color="black" />
+                                    <Text> Personal</Text>
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
 
                     <Button title='Update' onPress={handleSavePress} />
                 </View>
