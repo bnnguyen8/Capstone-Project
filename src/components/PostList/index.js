@@ -38,11 +38,8 @@ export default function PostList({
 	const lightTemplate = useSelector((state) => state.sortnotes.lightTemplate)
 	var cardStyle = styles.container
     if(!lightTemplate) {
-		console.log("dark theme")
 		cardStyle=styles.containerDarkTheme
     }
-	console.log(lightTemplate)
-    console.log(cardStyle)
     return (
 		<>
         	<View style={cardStyle}>

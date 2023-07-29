@@ -12,10 +12,8 @@ export default function AppLoader() {
     useEffect(() => {
 		(async () => {
             if(sortModified){
-                console.log("Sort by modified desc");
                 var posts = await database.load();
             } else {
-                console.log("Sort by created desc");
                 var posts = await database.loadByCreated();
             }
                 

@@ -20,6 +20,7 @@ export default function PostItem({ id, description, color, category, completed, 
     const handleEditPress = () => {
         navigation.navigate("Edit", { post: { id, description, category } });
     };
+    const allowDeleted = useSelector((state) => state.sortnotes.allowDeleted)
 
     const handleDeletePress = () => {
         Alert.alert(
@@ -91,6 +92,7 @@ export default function PostItem({ id, description, color, category, completed, 
                     onPress={handleEditPress}
                 ></MaterialCommunityIcons.Button>
 
+                {allowDeleted && (
                 <MaterialCommunityIcons.Button
                 name="trash-can-outline"
                 size={18}
@@ -99,6 +101,7 @@ export default function PostItem({ id, description, color, category, completed, 
                 underlayColor='#ffdddd'
                 onPress={handleDeletePress}
                 ></MaterialCommunityIcons.Button>
+                )}
             </View>
         </View>
     )

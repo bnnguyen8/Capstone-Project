@@ -9,7 +9,7 @@ import {
     Pressable,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCreatedModified, togglelightTemplate } from "../../redux/sortnotesSlice";
+import { toggleCreatedModified, togglelightTemplate, toggleallowDeleted } from "../../redux/sortnotesSlice";
 import styles from './styles'
 
 import * as database from "../../database"
@@ -20,6 +20,7 @@ export default function SortNotes() {
 
     const sortModified = useSelector((state) => state.sortnotes.sortModified)
     const lightTemplate = useSelector((state) => state.sortnotes.lightTemplate)
+    const allowDeleted = useSelector((state) => state.sortnotes.allowDeleted)
     
     const dispatch = useDispatch()
 
@@ -32,6 +33,10 @@ export default function SortNotes() {
             var posts = await database.loadByCreated();
         }
         dispatch(setPosts(posts));
+    }
+
+    const handleallowDeleted = async () => {
+        dispatch(toggleallowDeleted())
     }
 
     const handleLightTheme = async () => {
@@ -60,6 +65,17 @@ export default function SortNotes() {
                 <Pressable onPress={handleLightTheme}>
                     <Text style={styles.optionText}>
                     {lightTemplate ? "Light background" : "Dark background"}
+                    </Text>
+                </Pressable>
+            </View>
+            <View style={styles.optionContainer}> 
+                <Switch
+                    value={allowDeleted}
+                    onValueChange={handleallowDeleted}
+                    />
+                <Pressable onPress={handleallowDeleted}>
+                    <Text style={styles.optionText}>
+                    {allowDeleted ? "Allow delete notes" : "Not allow delete notes"}
                     </Text>
                 </Pressable>
             </View>
