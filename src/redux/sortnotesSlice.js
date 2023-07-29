@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    sortModified: true
+    sortModified: true,
+    lightTemplate: true
 };
 
 export const sortnotesSlice = createSlice({
@@ -10,10 +11,13 @@ export const sortnotesSlice = createSlice({
     reducers: {
         toggleCreatedModified: (state) => {
             state.sortModified = !state.sortModified;
+        },
+        togglelightTemplate: (state) => {
+            state.lightTemplate = !state.lightTemplate;
         }
     }
 });
 
 
-export const { toggleCreatedModified } = sortnotesSlice.actions;
+export const { toggleCreatedModified, togglelightTemplate } = sortnotesSlice.actions;
 export default sortnotesSlice.reducer;

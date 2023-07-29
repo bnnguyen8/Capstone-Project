@@ -10,10 +10,8 @@ export default function PostList({
 }) {
 
 	const [searchTerm, setSearchTerm] = useState("");
-
 	const posts = useSelector((state) => state.post.posts);
 	
-
 	const handleAddNotePress = () => {
 		navigation.navigate("Add");
 	};
@@ -37,34 +35,43 @@ export default function PostList({
 	// 	filteredPosts.sort((a, b) => b.created - a.created); // Sort by created descending
 	// }
 	
-	
-	return (
+	const lightTemplate = useSelector((state) => state.sortnotes.lightTemplate)
+	var cardStyle = styles.container
+    if(!lightTemplate) {
+		console.log("dark theme")
+		cardStyle=styles.containerDarkTheme
+    }
+	console.log(lightTemplate)
+    console.log(cardStyle)
+    return (
 		<>
-			<TextInput
-                style={[styles.textInput]}
-                placeholder='Search notes'
-				value={searchTerm}
-                onChangeText={setSearchTerm} // Use setSearchTerm directly as the onChangeText handler
-            />
-			<ScrollView>
-				{filteredPosts.map((post, index) => {
-					return (
-						<Pressable key={index}  onPress={(() => handlePostPress(post))}>
-							<PostItem 
-								navigation={navigation}
-								route={route}
-								{...post}
-							/>
-						</Pressable>
-					);
-				})}
-                <View style={{height: 90}}></View>
-			</ScrollView>
+        	<View style={cardStyle}>
+				<TextInput
+					style={[styles.textInput]}
+					placeholder='Search notes'
+					value={searchTerm}
+					onChangeText={setSearchTerm} // Use setSearchTerm directly as the onChangeText handler
+				/>
+				<ScrollView>
+					{filteredPosts.map((post, index) => {
+						return (
+							<Pressable key={index}  onPress={(() => handlePostPress(post))}>
+								<PostItem 
+									navigation={navigation}
+									route={route}
+									{...post}
+								/>
+							</Pressable>
+						);
+					})}
+					<View style={{height: 90}}></View>
+				</ScrollView>
 
-			<View style={styles.addButtonContainer}>
-				<Pressable onPress={handleAddNotePress}>
-					<Text  style={styles.addButtonText}>+</Text>
-				</Pressable>
+				<View style={styles.addButtonContainer}>
+					<Pressable onPress={handleAddNotePress}>
+						<Text  style={styles.addButtonText}>+</Text>
+					</Pressable>
+				</View>
 			</View>
 		</>
 	);

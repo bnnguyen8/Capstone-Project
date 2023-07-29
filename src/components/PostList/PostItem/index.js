@@ -41,17 +41,19 @@ export default function PostItem({ id, description, color, completed, favorite, 
         )
     }
 
-    var cardStyle = completed ? styles.cardCompleted : styles.card;
+    var cardStyle = styles.card;
 
-    if(!completed && color != "None") {
+    if(completed) {
+        cardStyle=[styles.card, styles.cardCompleted]
+    } else if(color != "None") {
         if(color == "Yellow")
-            cardStyle=styles.cardColorYellow
+            cardStyle=[styles.card, styles.cardColorYellow]
         else if(color == "Green")
-            cardStyle=styles.cardColorGreen
+            cardStyle=[styles.card, styles.cardColorGreen]
         else if(color == "Blue")
-            cardStyle=styles.cardColorBlue
+            cardStyle=[styles.card, styles.cardColorBlue]
         else if(color == "Purple")
-            cardStyle=styles.cardColorPurple
+            cardStyle=[styles.card, styles.cardColorPurple]
     }
 
     return (
@@ -65,18 +67,18 @@ export default function PostItem({ id, description, color, completed, favorite, 
                     {description}
                 </Text>
                 {
-                    important ? <Text style={styles.description}> [pinned] </Text> : <Text></Text>
+                    important ? <Text style={styles.description}> <AntDesign name="pushpino" size={12} color="black" /> </Text> : <Text></Text>
                 }
             </View>
 
             <View style={styles.button}>
-                <MaterialCommunityIcons.Button name="clipboard-edit"
+                <MaterialCommunityIcons.Button name="circle-edit-outline"
                     size={18}
                     color="#cc0000"
                     backgroundColor={'transparent'}
                     underlayColor='#ffdddd'
                     onPress={handleEditPress}
-                >Edit</MaterialCommunityIcons.Button>
+                ></MaterialCommunityIcons.Button>
 
                 <MaterialCommunityIcons.Button
                 name="trash-can-outline"
@@ -85,7 +87,7 @@ export default function PostItem({ id, description, color, completed, favorite, 
                 backgroundColor={'transparent'}
                 underlayColor='#ffdddd'
                 onPress={handleDeletePress}
-                >Delete</MaterialCommunityIcons.Button>
+                ></MaterialCommunityIcons.Button>
             </View>
         </View>
     )

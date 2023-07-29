@@ -2,6 +2,12 @@ import { StyleSheet, Platform } from "react-native";
 import { primaryColor, secondaryColor } from '../../includes/variables'
 
 export default StyleSheet.create({
+    containerDarkTheme: {
+        backgroundColor: '#2c4228',
+        height: '100%',
+    },
+    container: {
+    },
    addButtonContainer: {
         backgroundColor: primaryColor,
         borderRadius: 30,
@@ -31,6 +37,7 @@ export default StyleSheet.create({
         marginBottom: 10,
         marginTop: 10,
         margin: 50,
+        fontSize: 20,
     },
    addButtonText: {
     width: 60,

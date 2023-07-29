@@ -2,35 +2,39 @@ import { StyleSheet, Platform } from "react-native";
 import { primaryColor, secondaryColor } from '../../includes/variables'
 
 export default StyleSheet.create({
-    // container: {
-    //     padding: 20,
-    //     flex: 1,
-    // },
-    // title: {
-    //     fontSize: 26,
-    //     fontWeight: 'bold',
-    //     color: primaryColor,
-    // },
-    // id: {
-    //     fontSize: 13,
-    //     color: secondaryColor,
-    //     marginBottom: 20,
-    // },
-    // description: {
-    //     fontSize: 17,
-    //     color: 'black',
-    // },
-    // status: {
-    //     fontSize: 13,
-    //     color: secondaryColor,
-    //     fontWeight: 'bold',
-    //     textAlign: 'center',
-    //     marginTop: 20,
-    // },
-    // body: {
-    //     // height: 300,
-    //     flex: 1,
-        
-    // }
-
+    containerDarkTheme: {
+        backgroundColor: '#2c4228',
+        width: '100%',
+        height: '100%',
+        paddingBottom: 10,
+    },
+    containerLightTheme: {
+        width: '100%',
+        height: '100%',
+        paddingBottom: 10,
+    },
+    containerSubDarkTheme: {
+        padding: 20,
+        flex: 1,
+        backgroundColor: '#fff',
+        marginTop: 10,
+        marginHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+        padding: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        borderRadius: 10
+    },
+    containerSubLightTheme: {
+        padding: 20,
+        flex: 1,
+        backgroundColor: '#fff',
+        marginTop: 10,
+        marginHorizontal: 10,
+        padding: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        borderRadius: 10
+    },
 })

@@ -9,7 +9,7 @@ import {
     Pressable,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCreatedModified } from "../../redux/sortnotesSlice";
+import { toggleCreatedModified, togglelightTemplate } from "../../redux/sortnotesSlice";
 import styles from './styles'
 
 import * as database from "../../database"
@@ -19,6 +19,8 @@ import { setPosts } from "../../redux/postSlice";
 export default function SortNotes() {
 
     const sortModified = useSelector((state) => state.sortnotes.sortModified)
+    const lightTemplate = useSelector((state) => state.sortnotes.lightTemplate)
+    
     const dispatch = useDispatch()
 
     const handleSortNotes = async () => {
@@ -32,9 +34,13 @@ export default function SortNotes() {
         dispatch(setPosts(posts));
     }
 
+    const handleLightTheme = async () => {
+        dispatch(togglelightTemplate())
+    }
+
     return (
         <View style={styles.container}> 
-            <Text style={styles.title}>Sort Notes</Text>
+            <Text style={styles.title}>Preferences:</Text>
             <View style={styles.optionContainer}> 
                 <Switch
                     value={sortModified}
@@ -43,6 +49,17 @@ export default function SortNotes() {
                 <Pressable onPress={handleSortNotes}>
                     <Text style={styles.optionText}>
                     {sortModified ? "Sort by modified desc" : "Sort by created desc"}
+                    </Text>
+                </Pressable>
+            </View>
+            <View style={styles.optionContainer}> 
+                <Switch
+                    value={lightTemplate}
+                    onValueChange={handleLightTheme}
+                    />
+                <Pressable onPress={handleLightTheme}>
+                    <Text style={styles.optionText}>
+                    {lightTemplate ? "Light background" : "Dark background"}
                     </Text>
                 </Pressable>
             </View>

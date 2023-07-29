@@ -13,15 +13,30 @@ import ResetDatabase from "../../components/ResetDatabase";
 import Preference from "../../components/Preference";
 import LocalNotification from "../../components/LocalNotification";
 import PushNotification from "../../components/PushNotification";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function SettingsScreen() {
+
+    const lightTemplate = useSelector((state) => state.sortnotes.lightTemplate)
+    if(!lightTemplate) {
+		var cardStyle=styles.containerDarkTheme
+        var cardStyleContainer=styles.containerSubDarkTheme
+    }else{
+        var cardStyle = styles.containerLightTheme
+        var cardStyleContainer=styles.containerSubLightTheme
+    }
+
     return (
-        <>
-            <SortNotes />
-            <ResetDatabase />
-            {/* <Preference /> */}
-            {/* <LocalNotification /> */}
-            {/* <PushNotification /> */}
+		<>
+            <View style={cardStyle}>
+        	    <View style={cardStyleContainer}>
+                    <SortNotes />
+                    <ResetDatabase />
+                    {/* <Preference /> */}
+                    {/* <LocalNotification /> */}
+                    {/* <PushNotification /> */}
+                </View>
+            </View>
         </>
     )
 }

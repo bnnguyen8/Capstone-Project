@@ -2,6 +2,14 @@ import { StyleSheet, Platform } from "react-native";
 import { primaryColor, secondaryColor } from '../../includes/variables'
 
 export default StyleSheet.create({
+    containerDarkTheme: {
+        backgroundColor: '#2c4228',
+        width: '100%',
+        height: '100%',
+        paddingBottom: 10,
+    },
+    containerLightTheme: {
+    },
     container: {
         padding: 20,
         flex: 1,
@@ -12,7 +20,8 @@ export default StyleSheet.create({
         borderColor: 'rgba(0,0,0,0.2)',
         padding: 10,
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderRadius: 10
     },
     title: {
         fontSize: 26,
@@ -57,5 +66,4 @@ export default StyleSheet.create({
         flex: 1,
         
     }
-    
 })

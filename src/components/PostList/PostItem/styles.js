@@ -10,59 +10,23 @@ export default StyleSheet.create({
         borderColor: 'rgba(0,0,0,0.2)',
         padding: 10,
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderRadius: 10
     },
     cardCompleted: {
         backgroundColor: '#e5e5e5',
-        marginTop: 10,
-        marginHorizontal: 10,
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.2)',
-        padding: 10,
-        flexDirection: 'column',
-        justifyContent: 'space-between'
     },
     cardColorYellow: {
         backgroundColor: 'yellow',
-        color: 'white',
-        marginTop: 10,
-        marginHorizontal: 10,
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.2)',
-        padding: 10,
-        flexDirection: 'column',
-        justifyContent: 'space-between'
     },
     cardColorGreen: {
         backgroundColor: 'green',
-        color: 'white',
-        marginTop: 10,
-        marginHorizontal: 10,
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.2)',
-        padding: 10,
-        flexDirection: 'column',
-        justifyContent: 'space-between'
     },
     cardColorBlue: {
         backgroundColor: 'blue',
-        marginTop: 10,
-        marginHorizontal: 10,
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.2)',
-        padding: 10,
-        flexDirection: 'column',
-        justifyContent: 'space-between'
     },
     cardColorPurple: {
         backgroundColor: 'purple',
-        marginTop: 10,
-        marginHorizontal: 10,
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.2)',
-        padding: 10,
-        flexDirection: 'column',
-        justifyContent: 'space-between'
     },
     title: {
         fontSize: 18,
@@ -104,6 +68,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         paddingTop: 10,
         fontSize: 12,
-        marginLeft: 180,
+        marginLeft: 260,
+        width: 100,
     }
 })

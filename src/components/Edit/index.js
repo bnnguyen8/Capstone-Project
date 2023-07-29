@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import styles from './styles'
 import { updatePost } from "../../redux/postSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadById } from "../../database";
 import * as database from "../../database"
 import { primaryColor } from "../../includes/variables";
@@ -73,28 +73,38 @@ export default function Edit({navigation, route}) {
         ) 
     }
 
-    return (
-        <View style={styles.container}> 
-            
-            <Text style={styles.label}>Note:</Text>
-            {errorMessages.length > 0 && (
-                <View>
-                    <Text style={styles.errorMessageItem}>{errorMessages}</Text>
-                    {
-                        errorMessages.map((message, index) => {
-                            <Text key={index} style={styles.errorMessageItem}>- {message}</Text>
-                        })
-                    }
-                </View>
-            )}
-            <TextInput
-                style={[styles.textInput, styles.textInputDescription]}
-                multiline={true}
-                value={updatedDescription}
-                onChangeText={setUpdatedDescription}
-            />
+    const lightTemplate = useSelector((state) => state.sortnotes.lightTemplate)
+    if(!lightTemplate) {
+		var cardStyle=styles.containerDarkTheme
+    }else{
+        var cardStyle = styles.containerLightTheme
+    }
 
-            <Button title='Save' onPress={handleSavePress} />
-        </View>
+    return (
+		<>
+            <View style={cardStyle}>
+                <View style={styles.container}> 
+                    <Text style={styles.label}>Note:</Text>
+                    {errorMessages.length > 0 && (
+                        <View>
+                            <Text style={styles.errorMessageItem}>{errorMessages}</Text>
+                            {
+                                errorMessages.map((message, index) => {
+                                    <Text key={index} style={styles.errorMessageItem}>- {message}</Text>
+                                })
+                            }
+                        </View>
+                    )}
+                    <TextInput
+                        style={[styles.textInput, styles.textInputDescription]}
+                        multiline={true}
+                        value={updatedDescription}
+                        onChangeText={setUpdatedDescription}
+                    />
+
+                    <Button title='Update' onPress={handleSavePress} />
+                </View>
+            </View>
+        </>
     )
 }

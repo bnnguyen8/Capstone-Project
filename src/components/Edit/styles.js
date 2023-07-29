@@ -2,13 +2,22 @@ import { StyleSheet, Platform } from "react-native";
 import { primaryColor, secondaryColor } from '../../includes/variables'
 
 export default StyleSheet.create({
+    containerDarkTheme: {
+        backgroundColor: '#2c4228',
+        width: '100%',
+        height: '100%',
+        paddingBottom: 10,
+    },
+    containerLightTheme: {
+    },
     label: {
         color: primaryColor,
         fontSize: 20,
         fontWeight: 'bold',
     },
     container: {
-        padding: 10
+        padding: 10,
+        borderRadius: 10,
     },
     textInput: {
         borderWidth: 1,
@@ -17,7 +26,7 @@ export default StyleSheet.create({
         paddingVertical: 5,
         backgroundColor: '#fff',
         marginBottom: 10,
-        marginTop: 10
+        marginTop: 10,
     },
     textInputDescription: {
         height: 220,
