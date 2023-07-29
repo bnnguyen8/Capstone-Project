@@ -81,5 +81,8 @@ export default StyleSheet.create({
         fontSize: 12,
         marginLeft: 260,
         width: 100,
+    },
+    viewDes: {
+        marginTop: 10,
     }
 })

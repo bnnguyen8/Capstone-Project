@@ -50,16 +50,20 @@ export default function PostItem({ id, description, color, category, completed, 
     if(completed) {
         cardStyle=[styles.card, styles.cardCompleted]
     } else if(color != "None") {
-        if(color == "Yellow")
-            cardStyle=[styles.card, styles.cardColorYellow]
-        else if(color == "Green")
-            cardStyle=[styles.card, styles.cardColorGreen]
-        else if(color == "Blue")
-            cardStyle=[styles.card, styles.cardColorBlue]
-        else if(color == "Purple")
-            cardStyle=[styles.card, styles.cardColorPurple]
-
         textColor = styles.textColorWhite;
+        if(color == "Yellow"){
+            textColor = styles.textColorBlack;
+            cardStyle=[styles.card, styles.cardColorYellow]
+        }
+        else if(color == "Green") {
+            cardStyle=[styles.card, styles.cardColorGreen]
+        }
+        else if(color == "Blue") {
+            cardStyle=[styles.card, styles.cardColorBlue]
+        }
+        else if(color == "Purple") {
+            cardStyle=[styles.card, styles.cardColorPurple]
+        }
     }
 
     return (
@@ -77,11 +81,12 @@ export default function PostItem({ id, description, color, category, completed, 
                 {category == "Personal" && (
                     <FontAwesome name="user-o" size={18} color="black" />
                 )}
-                <Text style={textColor} > {description}</Text>
-                {
-                    important ? <Text style={styles.description}> <AntDesign name="pushpino" size={12} color="black" /> </Text> : <Text></Text>
-                }
+                
+                {important && (
+                    <AntDesign name="pushpino" size={18} color="black" />
+                )}
             </View>
+            <View style={styles.viewDes}><Text style={textColor} > {description}</Text></View>
 
             <View style={styles.button}>
                 <MaterialCommunityIcons.Button name="circle-edit-outline"

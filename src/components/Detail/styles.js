@@ -69,5 +69,16 @@ export default StyleSheet.create({
         // height: 300,
         flex: 1,
         
-    }
+    },
+    SendEmail: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginLeft: 185,
+        marginBottom: 10,
+    },
+    buttonText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginLeft: 5,
+    },
 })

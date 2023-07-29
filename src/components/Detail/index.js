@@ -1,28 +1,25 @@
 import {
 	Text,
 	View,
-    TextInput,
-    Button,
 	Switch,
-    RadioButton,
     ScrollView,
     Pressable,
-    ActivityIndicator,
-    TouchableOpacity
+    TouchableOpacity,
+    Linking,
+    Alert
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
 import styles from './styles'
 import { useEffect, useState } from "react";
-import { loadById } from "../../database";
-import { primaryColor } from "../../includes/variables";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCompleted, changeColor, changeFavorite, changeImportant } from "../../redux/postSlice";
 import * as database from "../../database"
 import { AntDesign } from '@expo/vector-icons';
 import { setPosts } from "../../redux/postSlice";
 import { FontAwesome } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const colors = ['None', 'Yellow', 'Green', 'Blue', 'Purple'];
 
@@ -112,6 +109,32 @@ export default function Detail({ route }) {
         dispatch(setPosts(posts));
     }
 
+    const handleSendEmail = () => {
+        if (post.description) {
+          const emailSubject = "My Note";
+          const emailBody = post.description;
+          const emailAddress = ""; // Enter the recipient email address if you want to pre-fill it
+    
+          // Create the email URL
+          const emailUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+          // Open the email client with the pre-filled data
+          Linking.canOpenURL(emailUrl)
+            .then((supported) => {
+              if (!supported) {
+                Alert.alert("Error", "Email is not supported on this device.");
+              } else {
+                return Linking.openURL(emailUrl);
+              }
+            })
+            .catch((err) => {
+              Alert.alert("Error", "An error occurred while trying to send the email.");
+            });
+        } else {
+          Alert.alert("Error", "Post description is empty.");
+        }
+      };
+
     const lightTemplate = useSelector((state) => state.sortnotes.lightTemplate)
     if(!lightTemplate) {
 		var cardStyle=styles.containerDarkTheme
@@ -127,9 +150,10 @@ export default function Detail({ route }) {
                     <ScrollView>
                         <View style={styles.switch}>
                             <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                            {post.favorite && (
+                            {fav && (
                                 <AntDesign style={styles.starIcon} name='star' size={18} color='#f6bb03' />
                             )}
+
                             {post.category == "Work" && (
                                 <AntDesign name="carryout" size={18} color="black" />
                             )}
@@ -188,8 +212,17 @@ export default function Detail({ route }) {
                         </Text>
                     </Pressable>
                 </View>
+
+                <TouchableOpacity style={styles.button} onPress={handleSendEmail}>
+                <View style={styles.SendEmail}>
+                    <View style={{ flexDirection: "row", justifyContent: "space-around" }}>     
+                        <MaterialCommunityIcons name="email-send-outline" size={24} color="black" />
+                        <Text style={styles.buttonText}>Send email</Text>
+                    </View>
+                </View>
+                </TouchableOpacity>
             </View>
-            </View>
+        </View>
         </>
     )
 }
