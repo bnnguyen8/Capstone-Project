@@ -12,7 +12,7 @@ export default StyleSheet.create({
         backgroundColor: primaryColor,
         borderRadius: 30,
         position: 'absolute',
-        bottom: 15,
+        top: 3,
         right: 15,
 
         // android
@@ -37,6 +37,7 @@ export default StyleSheet.create({
         marginBottom: 10,
         marginTop: 10,
         margin: 50,
+        marginRight: 90,
         fontSize: 20,
     },
    addButtonText: {

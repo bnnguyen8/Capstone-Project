@@ -30,3 +30,6 @@ export default function PostsScreen({ navigation, route }) {
         </Stack.Navigator>
     )
 }
+
+// eas build:configure
+// eas build -p android --profile preview

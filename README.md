@@ -11,19 +11,26 @@ Welcome to Fanshawe Notes, this is the ultimate app with features like creating 
 
 ## Features
 
-1. List: User can view all added notes as list on home screen. 
-2. Create Notes: User can create new note with text. 
-3. View: User can view an existing note for details in case it has long text. 
-4. Edit Notes: User can edit the content of existing note. 
-5. Delete Notes: User can delete an existing note.
-6. User can mark a note as completed
-7. User can mark a note as favorite
-8. User can search by text to find specific notes.
-9. User can sort notes by date created desc or last modified desc.
-10. User can pin notes to top to keep them easily accessible.
-11. User can share notes with others via email.
-12. User can change note's background color to different colors: yellow, green, blue, purple.
-13. User can organize their notes into categories for better management.
-14. User can clear all notes.
-15. User can set reminders for specific notes to receive notifications or alarms at designated times.
-16. User can switch to a dark theme for better readability in low-light conditions.
+Completed features:
+Sprint #1:
+● Issue #5: Create Notes: User can create new notes with text.
+● Issue #1: List: User can view all added notes as a list on the home screen.
+● Issue #12: Edit Notes: User can edit the contents of existing notes.
+● Issue #6: View: User can view an existing note for details.
+Sprint #2:
+● Issue #10: Delete Notes: User can delete an existing note.
+● Issue #11: User can mark a note as completed.
+● Issue #13: User can mark a note as their favorite.
+● Issue #15: User can search by text to find specific notes.
+Sprint #3:
+● Issue #2: User can sort notes by date created desc or last modified desc.
+● Issue #3: User can pin notes to the top to keep them easily accessible.
+● Issue #14: User can change the note's background color to different colors: yellow,
+green, blue, purple.
+● Issue #8: User can clear all notes.
+Sprint #4:
+● Issue #4: User can share note to others via email.
+● Issue #7: User can organize their notes into categories for better management.
+● Issue #9: Users can set the mode to completely delete the notes in the settings.
+● Issue #16: Users can switch to a dark background color for better readability in low
+light.

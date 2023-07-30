@@ -18,21 +18,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "ca.bnnguyen.fanshawenotes"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "bnnguyen.ca"
+      "package": "ca.bnnguyen.fanshawenotes"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "ccaf857c-18ec-4d74-8b9c-16d0a93dba09"
+        "projectId": "3f89e7c1-5d97-4815-a740-e1c79a3d7fad"
       }
     }
   }
