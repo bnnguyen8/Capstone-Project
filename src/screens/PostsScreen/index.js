@@ -33,3 +33,4 @@ export default function PostsScreen({ navigation, route }) {
 
 // eas build:configure
 // eas build -p android --profile preview
+// https://docs.expo.dev/build/setup/
