@@ -21,11 +21,8 @@ export default function PostsScreen({ navigation, route }) {
     return (
         <Stack.Navigator>
             <Stack.Screen name="List" component={PostList} options={{ headerShown: false }} />
-
             <Stack.Screen name="Add" component={Form} options={{ title: 'Go back' }} />
-
             <Stack.Screen name="Detail" component={Detail} />
-
             <Stack.Screen name="Edit" component={Edit} />
         </Stack.Navigator>
     )
@@ -33,4 +30,4 @@ export default function PostsScreen({ navigation, route }) {
 
 // eas build:configure
 // eas build -p android --profile preview
-// https://docs.expo.dev/build/setup/
+// https://docs.expo.dev/build-reference/apk/

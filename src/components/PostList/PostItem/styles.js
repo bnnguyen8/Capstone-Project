@@ -79,7 +79,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         paddingTop: 10,
         fontSize: 12,
-        marginLeft: 260,
+        marginLeft: 220,
         width: 100,
     },
     viewDes: {
